@@ -1,21 +1,28 @@
+class Complex:
+    def __init__(self,real,img):
+        self.real =real
+        self.img = img
+
+    def show(self):
+        print(self.real,"i",self.img,"j")
+
+    def __add__(self,num2):
+        sr =self.real +num2.real
+        si =self.img +num2.img
+        return Complex(sr, si)
 
 
+    def __sub__(self,num2):
+        sr =self.real -num2.real
+        si =self.img -num2.img
+        return Complex(sr, si)
 
 
-class Account:
-    def __init__(self,acc_no,acc_pass):  #Attribute
-        self.acc_no =acc_no
-        self.__acc_pass =acc_pass
+num1 =Complex(1,2)
+num1.show()
 
-    def reset_(self):      #Methods
-        print(self.__acc_pass)
+num2 =Complex(11,2)
+num2.show()
 
-a1 =Account("12021","123@")
-a2 =Account("12022","123@")
-
-
-print(a1.acc_no)
-print(a1.reset_())
-
-print(a2.acc_no)
-print(a2.reset_())
+num3 =num1 - num2
+num3.show()
